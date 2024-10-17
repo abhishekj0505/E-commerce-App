@@ -23,7 +23,7 @@ const NavBar = () => {
           className={({ isActive }) =>
             `${
               isActive
-                ? "font-bold border-solid border border-sky p-2 rounded-md"
+                ? "font-bold p-2 rounded-md"
                 : "text-white"
             }`
           }
