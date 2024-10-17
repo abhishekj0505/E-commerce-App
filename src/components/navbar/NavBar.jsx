@@ -16,7 +16,7 @@ const NavBar = () => {
 
   // navList Data
   const navList = (
-    <ul className="flex space-x-7 text-white font-medium text-md px-3 ">
+    <ul className="flex space-x-2 text-white font-medium text-md px-3 ">
       {/* Home */}
       <li>
         <NavLink
