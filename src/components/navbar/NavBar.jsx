@@ -21,11 +21,7 @@ const NavBar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            `${
-              isActive
-                ? "font-bold p-2 rounded-md"
-                : "text-white"
-            }`
+            `${isActive ? "font-bold p-2 rounded-md" : "text-white"}`
           }
           to={"/"}
         >
@@ -35,25 +31,27 @@ const NavBar = () => {
 
       {/* All Product */}
       <li>
-        <NavLink className={({ isActive }) =>
-            `${
-              isActive
-                ? "font-bold border-solid border border-sky p-2 rounded-md"
-                : "text-white"
-            }`
-          } to={"/allproduct"}>All Product</NavLink >
+        <NavLink
+          className={({ isActive }) =>
+            `${isActive ? "font-bold p-2 rounded-md" : "text-white"}`
+          }
+          to={"/allproduct"}
+        >
+          All Product
+        </NavLink>
       </li>
 
       {/* Signup */}
       {!user ? (
         <li>
-          <NavLink className={({ isActive }) =>
-            `${
-              isActive
-                ? "font-bold border-solid border border-sky p-2 rounded-md"
-                : "text-white"
-            }`
-          } to={"/signup"}>Signup</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `${isActive ? "font-bold  p-2 rounded-md" : "text-white"}`
+            }
+            to={"/signup"}
+          >
+            Signup
+          </NavLink>
         </li>
       ) : (
         ""
@@ -62,13 +60,14 @@ const NavBar = () => {
       {/* Login*/}
       {!user ? (
         <li>
-          <NavLink className={({ isActive }) =>
-            `${
-              isActive
-                ? "font-bold border-solid border border-sky p-2 rounded-md"
-                : "text-white"
-            }`
-          } to={"/login"}>Login</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `${isActive ? "font-bold p-2 rounded-md" : "text-white"}`
+            }
+            to={"/login"}
+          >
+            Login
+          </NavLink>
         </li>
       ) : (
         ""
@@ -77,26 +76,28 @@ const NavBar = () => {
       {/* User */}
       {user?.role == "user" && (
         <li>
-          <NavLink className={({ isActive }) =>
-            `${
-              isActive
-                ? "font-bold border-solid border border-sky p-2 rounded-md"
-                : "text-white"
-            }`
-          } to={"/user-dashboard"}>{user.name}</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `${isActive ? "font-bold p-2 rounded-md" : "text-white"}`
+            }
+            to={"/user-dashboard"}
+          >
+            {user.name}
+          </NavLink>
         </li>
       )}
 
       {/* Admin */}
       {user?.role == "admin" && (
         <li>
-          <NavLink className={({ isActive }) =>
-            `${
-              isActive
-                ? "font-bold border-solid border border-sky p-2 rounded-md"
-                : "text-white"
-            }`
-          } to={"/admin-dashboard"}>{user.name}</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              `${isActive ? "font-bold p-2 rounded-md" : "text-white"}`
+            }
+            to={"/admin-dashboard"}
+          >
+            {user.name}
+          </NavLink>
         </li>
       )}
 
@@ -109,13 +110,14 @@ const NavBar = () => {
 
       {/* Cart */}
       <li>
-        <NavLink className={({ isActive }) =>
-            `${
-              isActive
-                ? "font-bold border-solid border border-sky p-2 rounded-md"
-                : "text-white"
-            }`
-          } to={"/cart"}>Cart({cartItems.length})</NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            `${isActive ? "font-bold  p-2 rounded-md" : "text-white"}`
+          }
+          to={"/cart"}
+        >
+          Cart({cartItems.length})
+        </NavLink>
       </li>
     </ul>
   );
