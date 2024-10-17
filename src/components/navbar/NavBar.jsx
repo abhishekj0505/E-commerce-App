@@ -37,7 +37,7 @@ const NavBar = () => {
           }
           to={"/allproduct"}
         >
-          All Product
+          All-Product
         </NavLink>
       </li>
 
