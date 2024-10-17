@@ -11,23 +11,23 @@ const AllProduct = () => {
   const context = useContext(myContext);
   const { loading, getAllProduct } = context;
 
-  const cartItems = useSelector(state=>state.cart)
+  const cartItems = useSelector((state) => state.cart);
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const addCart = (item)=>{
-    dispatch(addToCart(item))
-    toast.success('Added to cart')
-  }
+  const addCart = (item) => {
+    dispatch(addToCart(item));
+    toast.success("Added to cart");
+  };
 
-  const deleteCart = (item)=>{
-    dispatch(deleteFromCart(item))
-    toast.success('Removed from cart')
-  }
+  const deleteCart = (item) => {
+    dispatch(deleteFromCart(item));
+    toast.success("Removed from cart");
+  };
 
-  useEffect(()=>{
-    localStorage.setItem('cart', JSON.stringify(cartItems))
-  },[cartItems])
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const navigate = useNavigate();
   return (
@@ -40,9 +40,7 @@ const AllProduct = () => {
           </h1>
         </div>
 
-        <div className="flex justify-center">
-          {loading && <Loader/>}
-        </div>
+        <div className="flex justify-center">{loading && <Loader />}</div>
 
         {/* main  */}
         <section className="text-gray-600 body-font">
@@ -61,7 +59,7 @@ const AllProduct = () => {
                       />
                       <div className="p-6">
                         <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                          E-bharat
+                          Cartify
                         </h2>
                         <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                           {title.substring(0, 25)}
@@ -71,17 +69,25 @@ const AllProduct = () => {
                         </h1>
 
                         <div className="flex justify-center ">
-                          {
-                            cartItems.some(p=>p.id===item.id)?
-                            <button onClick={()=>{deleteCart(item)}} className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold">
-                            Delete from cart
-                          </button>
-                            :
-                            <button onClick={()=>{addCart(item)}} className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold">
-                            Add To Cart
-                          </button>
-                          
-                          }
+                          {cartItems.some((p) => p.id === item.id) ? (
+                            <button
+                              onClick={() => {
+                                deleteCart(item);
+                              }}
+                              className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
+                            >
+                              Delete from cart
+                            </button>
+                          ) : (
+                            <button
+                              onClick={() => {
+                                addCart(item);
+                              }}
+                              className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold"
+                            >
+                              Add To Cart
+                            </button>
+                          )}
                         </div>
                       </div>
                     </div>
