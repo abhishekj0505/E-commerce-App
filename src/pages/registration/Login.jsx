@@ -13,6 +13,7 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [errors, setErrors] = useState({})
 
   const context = useContext(myContext);
   const { loading, setLoading } = context;
@@ -20,11 +21,28 @@ const Login = () => {
   const navigate = useNavigate();
 
   const userLoginFunction = async ()=>{
-    if(userLogin.email==='' || userLogin.password === ''){
-      return toast.error('All fields are required')
-    }
+    const newErrors = {};
 
-    setLoading(true)
+    if (!userLogin.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userLogin.email)) {
+      newErrors.email = "Enter a valid email";
+    }
+  
+    if (!userLogin.password.trim()) {
+      newErrors.password = "Password is required";
+    } else if (userLogin.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+    }
+  
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return toast.error("Please fix the errors");
+    }
+  
+    setErrors({});
+    setLoading(true);
+  
     
     try{
 
@@ -80,7 +98,7 @@ const Login = () => {
           </h2>
         </div>
 
-        {/* Input Two  */}
+        {/* Email Field  */}
         <div className="mb-3">
           <input
             type="email"
@@ -90,9 +108,14 @@ const Login = () => {
             placeholder="Email Address"
             className="bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200"
           />
+          {
+            errors.email && <p className="text-red-400 text-sm">
+              {errors.email}
+            </p>
+          }
         </div>
 
-        {/* Input Three  */}
+        {/* Password Field */}
         <div className="mb-5">
           <input
             type="password"
@@ -102,6 +125,11 @@ const Login = () => {
             placeholder="Password"
             className="bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none placeholder-pink-200"
           />
+          {
+            errors.password && <p className="text-red-400 text-sm">
+              {errors.password}
+            </p>
+          }
         </div>
 
         {/* Signup Button  */}
