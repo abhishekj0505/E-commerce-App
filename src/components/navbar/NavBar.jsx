@@ -21,7 +21,7 @@ const NavBar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            `${isActive ? "font-bold p-2 rounded-md" : "text-white"}`
+            `${isActive ? "font-bold p-1 border-b-2 border-white" : "text-white"}`
           }
           to={"/"}
         >
@@ -33,7 +33,7 @@ const NavBar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            `${isActive ? "font-bold p-2 rounded-md" : "text-white"}`
+            `${isActive ? "font-bold p-1 border-b-2 border-white" : "text-white"}`
           }
           to={"/allproduct"}
         >
@@ -46,7 +46,7 @@ const NavBar = () => {
         <li>
           <NavLink
             className={({ isActive }) =>
-              `${isActive ? "font-bold  p-2 rounded-md" : "text-white"}`
+              `${isActive ? "font-bold p-1 border-b-2 border-white" : "text-white"}`
             }
             to={"/signup"}
           >
@@ -62,7 +62,7 @@ const NavBar = () => {
         <li>
           <NavLink
             className={({ isActive }) =>
-              `${isActive ? "font-bold p-2 rounded-md" : "text-white"}`
+              `${isActive ? "font-bold p-1 border-b-2 border-white" : "text-white"}`
             }
             to={"/login"}
           >
@@ -78,7 +78,7 @@ const NavBar = () => {
         <li>
           <NavLink
             className={({ isActive }) =>
-              `${isActive ? "font-bold p-2 rounded-md" : "text-white"}`
+              `${isActive ? "font-bold p-1 border-b-2 border-white" : "text-white"}`
             }
             to={"/user-dashboard"}
           >
@@ -92,7 +92,7 @@ const NavBar = () => {
         <li>
           <NavLink
             className={({ isActive }) =>
-              `${isActive ? "font-bold p-2 rounded-md" : "text-white"}`
+              `${isActive ? "font-bold p-1 border-b-2 border-white" : "text-white"}`
             }
             to={"/admin-dashboard"}
           >
@@ -112,7 +112,7 @@ const NavBar = () => {
       <li>
         <NavLink
           className={({ isActive }) =>
-            `${isActive ? "font-bold  p-2 rounded-md" : "text-white"}`
+            `${isActive ? "font-bold p-1 border-b-2 border-white" : "text-white"}`
           }
           to={"/cart"}
         >
