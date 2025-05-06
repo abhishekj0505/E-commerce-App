@@ -19,8 +19,8 @@ const UserDashboard = () => {
           <div className=" bg-pink-50 py-5 rounded-xl border border-pink-100">
             {/* image  */}
             <div className="flex justify-center">
-              <img
-                src="https://cdn-icons-png.flaticon.com/128/2202/2202112.png"
+              <img className="h-24 w-24"
+                src="https://i.pinimg.com/564x/0e/ab/8d/0eab8de65a76d25a9b99d60f699d94d3.jpg"
                 alt=""
               />
             </div>
