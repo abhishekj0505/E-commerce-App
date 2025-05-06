@@ -104,7 +104,7 @@ const CartPage = () => {
     <Layout>
       <div className="container mx-auto px-4 max-w-7xl lg:px-0">
         <div className="mx-auto max-w-2xl py-8 lg:max-w-7xl">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl ml-5">
             Shopping Cart
           </h1>
           <form className="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
@@ -208,7 +208,7 @@ const CartPage = () => {
                     })}
                   </>
                 ) : (
-                  <h1 className="text-2xl">There are no items in your cart.</h1>
+                  <h1 className="text-2xl ml-5">There are no items in your cart.</h1>
                 )}
               </ul>
             </section>

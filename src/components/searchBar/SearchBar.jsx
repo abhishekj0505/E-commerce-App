@@ -40,7 +40,7 @@ const SearchBar = () => {
                     <div
                       key={index}
                       onClick={() => {
-                        navigate(`productinfo/${item.id}`);
+                        navigate(`/productinfo/${item.id}`);
                       }}
                       className="py-2 px-2 cursor-pointer"
                     >
