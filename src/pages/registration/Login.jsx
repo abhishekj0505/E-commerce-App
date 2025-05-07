@@ -76,12 +76,14 @@ const Login = () => {
       }catch(error){
         console.log(error)
         setLoading(false)
+        
       }
 
 
     }catch(error){
       console.log(error)
       setLoading(false)
+      toast.error('Invalid Credentials');
     }
   }
 
