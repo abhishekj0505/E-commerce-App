@@ -31,7 +31,7 @@ const AdminDashboard = () => {
             {/* image  */}
             <div className="flex justify-center">
               <img className="h-24 w-24"
-                src="https://i.pinimg.com/564x/0e/ab/8d/0eab8de65a76d25a9b99d60f699d94d3.jpg"
+                src={user.gender === 'male'? 'https://img.freepik.com/premium-vector/pink-white-image-man-with-pink-shirt-it_933463-31897.jpg?w=740' : 'https://cdn0.iconfinder.com/data/icons/social-messaging-ui-color-shapes/128/user-female-circle-pink-512.png'}
                 alt=""
               />
             </div>
@@ -44,10 +44,13 @@ const AdminDashboard = () => {
                 <span className=" font-bold">Email :</span> {user.email}
               </h1>
               <h1 className=" text-center text-lg text-pink-500">
-                <span className=" font-bold">Date :</span> {user.date}
+                <span className=" font-bold">Date of Joining:</span> {user.date}
               </h1>
               <h1 className=" text-center text-lg text-pink-500">
                 <span className=" font-bold">Role :</span> {user.role}
+              </h1>
+              <h1 className=" text-center text-lg text-pink-500">
+                <span className=" font-bold">Gender :</span> {user.gender}
               </h1>
             </div>
           </div>

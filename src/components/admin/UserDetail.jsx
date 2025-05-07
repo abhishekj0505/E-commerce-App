@@ -44,6 +44,13 @@ const UserDetail = () => {
                   scope="col"
                   className="h-12 px-6 text-md border-l first:border-l-0 border-pink-100 text-slate-700 bg-slate-100 font-bold fontPara"
                 >
+                  Gender
+                </th>
+
+                <th
+                  scope="col"
+                  className="h-12 px-6 text-md border-l first:border-l-0 border-pink-100 text-slate-700 bg-slate-100 font-bold fontPara"
+                >
                   Uid
                 </th>
 
@@ -58,7 +65,7 @@ const UserDetail = () => {
                   scope="col"
                   className="h-12 px-6 text-md border-l first:border-l-0 border-pink-100 text-slate-700 bg-slate-100 font-bold fontPara"
                 >
-                  Date
+                  Date Joined
                 </th>
               </tr>
               {getAllUser.map((user, index) => {
@@ -74,6 +81,10 @@ const UserDetail = () => {
 
                   <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 cursor-pointer ">
                     {user.email}
+                  </td>
+
+                  <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 cursor-pointer ">
+                    {user.gender}
                   </td>
 
                   <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-pink-100 stroke-slate-500 text-slate-500 cursor-pointer ">

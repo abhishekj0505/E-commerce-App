@@ -16,11 +16,14 @@ const Signup = () => {
   // navigate
   const navigate = useNavigate();
 
+  const genders = ['male', 'female', 'other']
+
   // userSignup state
   const [userSignup, setUserSignup] = useState({
     name: "",
     email: "",
     password: "",
+    gender: "",
     role: "user",
   });
 
@@ -29,7 +32,8 @@ const Signup = () => {
     if (
       userSignup.name === "" ||
       userSignup.email === "" ||
-      userSignup.password === ""
+      userSignup.password === "" ||
+      userSignup.gender === ""
     ) {
       return toast.error("All fields are required");
     }
@@ -49,6 +53,7 @@ const Signup = () => {
         email: users.user.email,
         uid: users.user.uid,
         role: userSignup.role,
+        gender : userSignup.gender,
         time: Timestamp.now(),
         date: new Date().toLocaleDateString("en-Us", {
           month: "short",
@@ -69,22 +74,21 @@ const Signup = () => {
         password: "",
       });
 
-      toast.success('Signup Successfull')
+      toast.success("Signup Successfull");
 
-      setLoading(false)
+      setLoading(false);
 
-      navigate('/login')
-
+      navigate("/login");
     } catch (error) {
       console.log(error);
-      setLoading(false)
+      setLoading(false);
     }
   };
 
   return (
     <div className="flex justify-center items-center h-screen">
       {/* loader component  */}
-      {loading && <Loader/>}
+      {loading && <Loader />}
       {/* Signup Form  */}
       <div className="login_Form bg-pink-50 px-1 lg:px-8 py-6 border border-pink-100 rounded-xl shadow-md">
         {/* Top Heading  */}
@@ -94,7 +98,7 @@ const Signup = () => {
           </h2>
         </div>
 
-        {/* Input One  */}
+        {/* Full Name */}
         <div className="mb-3">
           <input
             type="text"
@@ -110,7 +114,31 @@ const Signup = () => {
           />
         </div>
 
-        {/* Input Two  */}
+        {/* Gender */}
+        <div className="mb-3">
+          <select
+            type="text"
+            value={userSignup.gender}
+            onChange={(e) =>
+              setUserSignup({
+                ...userSignup,
+                gender: e.target.value,
+              })
+            }
+            placeholder="Gender"
+            className={`bg-pink-50 border border-pink-200 px-2 py-2 w-96 rounded-md outline-none ${
+              userSignup.gender === "" ? "text-pink-200" : "text-black"
+            }`}>
+              <option disabled value="">Select Gender</option>
+              {genders.map((item, index)=>{
+                return(
+                  <option key={index} value={item}>{item}</option>
+                )
+              })}
+            </select>
+        </div>
+
+        {/* Email Address */}
         <div className="mb-3">
           <input
             type="email"
@@ -126,7 +154,7 @@ const Signup = () => {
           />
         </div>
 
-        {/* Input Three  */}
+        {/* Password */}
         <div className="mb-5">
           <input
             type="password"
